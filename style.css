@@ -1,0 +1,189 @@
+/* --- Global Styles --- */
+:root {
+    --primary-bg: #f4f4f5; /* Light grey background */
+    --card-bg: #ffffff;    /* White card background */
+    --text-color: #1a1a1a; /* Dark grey for text */
+    --heading-color: #000000; /* Pure black for headings */
+    --accent-color: #007bff;   /* Blue for links and accents */
+    --border-color: #e5e5e5; /* Subtle border color */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-weight: 700; /* Bold */
+    color: var(--heading-color);
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Layout --- */
+.main-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* --- Navigation --- */
+.main-header nav {
+    margin-top: 20px;
+}
+
+.main-header nav a {
+    margin: 0 15px;
+    font-weight: 700;
+    color: var(--text-color);
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; /* Placeholder for active state */
+    transition: border-color 0.3s ease;
+}
+
+.main-header nav a:hover {
+    color: var(--heading-color);
+}
+
+/* Active link style */
+.main-header nav a.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+
+.content-column {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex-grow: 1; /* Makes the main content area grow to fill space */
+}
+
+.home-hero {
+    text-align: center;
+    padding-top: 40px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Pushes footer to the bottom */
+    color: #666;
+    font-size: 0.9rem;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+}
+
+/* --- Card Component --- */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    margin-bottom: 5px;
+}
+
+.card-meta {
+    font-size: 0.9rem;
+    color: #666;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+.card-affiliation {
+    font-weight: 700;
+    color: #444;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.card-image {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 600px) {
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-meta {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
+    .main-header nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
